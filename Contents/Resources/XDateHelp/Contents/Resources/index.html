@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>XDate Reference</title>
+		<meta name="AppleTitle" content="XDate Reference" />
+
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="assets/default.css" type="text/css" rel="stylesheet" media="all" />
+        <link href="assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
+		<meta name="keywords" content="XDate, AppleScript" />
+		<script type="text/javascript" src="assets-helpbook/run_helpscript.js"></script>
+		<script type="text/javascript" src="assets/navibar-jump.js"></script>
+        <link id="helpviewer-handler-helper" href="assets-helpbook/helpviewer-handler-helper.scpt" />
+        <script type="text/javascript" src="assets-helpbook/helpviewer-handler-enable.js"></script>
+        <link href="./" id="HelpBookRoot" />
+	</head>
+
+	<body>
+		<div id="navi-bar">
+			<div class="edit-script-link">
+				<a onclick="return runHelpScriptWithBundleRoot(this)" href="assets-helpbook/editScript.scpt">Edit Script</a>
+			</div>
+			<div class="left-contents">
+			<div class="to-root">
+				<!-- InstanceBeginEditable name="to-root" --><!-- InstanceEndEditable -->
+			</div>
+			<select onchange="navibarJump(this)">
+<option value="">
+§
+</option>
+<option value="#Example">
+Example
+</option>
+<option value="#Constractors">
+Constractors
+</option>
+<option value="#make_with_date">
+- make_with_date
+</option>
+<option value="#make_with_text">
+- make_with_text
+</option>
+<option value="#Predefined_formats">
+Predefined formats
+</option>
+<option value="#as_text">
+- as_text
+</option>
+<option value="#date_string">
+- date_string
+</option>
+<option value="#time_string">
+- time_string
+</option>
+<option value="#w3c_dtf">
+- w3c_dtf
+</option>
+<option value="#rfc822">
+- rfc822
+</option>
+<option value="#Obtain_parts_of_date_and_customize_details.">
+Obtain parts of date and customize details.
+</option>
+<option value="#set_year_format">
+- set_year_format
+</option>
+<option value="#y">
+- y
+</option>
+<option value="#set_month_format">
+- set_month_format
+</option>
+<option value="#mo">
+- mo
+</option>
+<option value="#set_leading_zero">
+- set_leading_zero
+</option>
+<option value="#d">
+- d
+</option>
+<option value="#set_weekday_format">
+- set_weekday_format
+</option>
+<option value="#w">
+- w
+</option>
+<option value="#h">
+- h
+</option>
+<option value="#min">
+- min
+</option>
+<option value="#sec">
+- sec
+</option>
+<option value="#time_to_GMT">
+- time_to_GMT
+</option>
+</select>
+			</div>
+		</div>
+		<!-- InstanceBeginEditable name="prev-next-item" --><!-- InstanceEndEditable -->
+		<div id="contents">
+		<h1>XDate Reference</h1>
+<ul>
+<li>Version 1.0</li>
+<li>Author Tetsuro KURITA <a href="mailto:scriptfactory@mac.com">scriptfactory@mac.com</a></li>
+<li>Requirements : OS X 10.9 or later</li>
+<li><a href="http://www.script-factory.net/XModules/XDate/en/index.html">Home page</a> || <a href="http://www.script-factory.net/XModules/XDate/changelog.html">ChangeLog</a> || <a href="https://github.com/tkurita/XDate.scptd">Repository</a> </li>
+</ul>
+<p>XDate is to convert a date object into text with various formats.</p>
+<p>You can build a date string with fexible object oriented interfaces.</p>
+<h2 id="Example">Example</h2>
+<div class="sourceCode">
+<div class="scriptButton">
+    <input type="button" value="Open this script" onclick="document.location = this.src" src="applescript://com.apple.scripteditor?action=new&amp;script=use%20XDate%20:%20script%20%22XDate%22%0D%0Dtell%20XDate%27s%20make_with_text(%222018/1/5%207:08%22)%0D%09(*%20predefined%20format%20*)%0D%09log%20date_as_text()%20--%202018%E5%B9%B41%E6%9C%885%E6%97%A5%E9%87%91%E6%9B%9C%E6%97%A5%207:08:00%0D%09log%20w3c_dtf()%20--%202018-12-14T19:35:35%2B09:00%0D%09log%20rfc822()%20--%20Fri,%2005%20Jan%202018%2007:08:00%20%2B0900%0D%09%0D%09(*%20build%20custom%20format%20*)%0D%09set_year_format(%22long%22)%0D%09set_month_format(%22number%22)%0D%09%0D%09log%20y()%20%26%20%22/%22%20%26%20mo()%20%26%20%22/%22%20%26%20d()%20%26%20%22%20%22%20%26%20h()%20%26%20%22:%22%20%26%20min()%20%26%20%22:%22%20%26%20sec()%0D%09--2018/1/5%207:8:0%0D%09set_leading_zero(true)%0D%09log%20y()%20%26%20%22/%22%20%26%20mo()%20%26%20%22/%22%20%26%20d()%20%26%20%22%20%22%20%26%20h()%20%26%20%22:%22%20%26%20min()%20%26%20%22:%22%20%26%20sec()%0D%09--%202018/01/05%2007:08:00%0Dend%20tell" />
+</div><div>
+<span class="langKeyword">use</span> <span class="userDefine">XDate</span><span class="normal"> : </span><span class="className">script</span><span class="normal"> &quot;XDate&quot;</span>
+</div>
+<br />
+<div>
+<span class="langKeyword">tell</span> <span class="userDefine">XDate's</span> <span class="userDefine">make_with_text</span><span class="normal">(&quot;2018/1/5 7:08&quot;)</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="comment">(* predefined format *)</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">date_as_text</span><span class="normal">() </span><span class="comment">-- 2018年1月5日金曜日 7:08:00</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">w3c_dtf</span><span class="normal">() </span><span class="comment">-- 2018-12-14T19:35:35+09:00</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">rfc822</span><span class="normal">() </span><span class="comment">-- Fri, 05 Jan 2018 07:08:00 +0900</span>
+</div>
+<br />
+<div style="text-indent:4ex;">
+<span class="comment">(* build custom format *)</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="userDefine">set_year_format</span><span class="normal">(&quot;long&quot;)</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="userDefine">set_month_format</span><span class="normal">(&quot;number&quot;)</span>
+</div>
+<br />
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">y</span><span class="normal">() &amp; &quot;/&quot; &amp; </span><span class="userDefine">mo</span><span class="normal">() &amp; &quot;/&quot; &amp; </span><span class="userDefine">d</span><span class="normal">() &amp; &quot; &quot; &amp; </span><span class="userDefine">h</span><span class="normal">() &amp; &quot;:&quot; &amp; </span><span class="userDefine">min</span><span class="normal">() &amp; &quot;:&quot; &amp; </span><span class="userDefine">sec</span><span class="normal">()</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="comment">--2018/1/5 7:8:0</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="userDefine">set_leading_zero</span><span class="normal">(</span><span class="enumeratedValues">true</span><span class="normal">)</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">y</span><span class="normal">() &amp; &quot;/&quot; &amp; </span><span class="userDefine">mo</span><span class="normal">() &amp; &quot;/&quot; &amp; </span><span class="userDefine">d</span><span class="normal">() &amp; &quot; &quot; &amp; </span><span class="userDefine">h</span><span class="normal">() &amp; &quot;:&quot; &amp; </span><span class="userDefine">min</span><span class="normal">() &amp; &quot;:&quot; &amp; </span><span class="userDefine">sec</span><span class="normal">()</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="comment">-- 2018/01/05 07:08:00</span>
+</div>
+<div>
+<span class="langKeyword">end</span> <span class="langKeyword">tell</span>
+</div>
+</div>
+<h2 id="Constractors">Constractors</h2>
+<h3 id="make_with_date"><a href="pages/make_with_date.html">make_with_date</a></h3>
+<p>Make a XDate instance from a date object.</p>
+<h3 id="make_with_text"><a href="pages/make_with_text.html">make_with_text</a></h3>
+<p>Make a XDate instance from a text.</p>
+<h2 id="Predefined_formats">Predefined formats</h2>
+<h3 id="as_text"><a href="pages/as_text.html">as_text</a></h3>
+<p>Return a text of the date object with the format defined in the system.</p>
+<h3 id="date_string"><a href="pages/date_string.html">date_string</a></h3>
+<p>Return a date part of the date object as a text with the format defined in the system.</p>
+<h3 id="time_string"><a href="pages/time_string.html">time_string</a></h3>
+<p>Return a time part of the date object as a text with the format defined in the system.</p>
+<h3 id="w3c_dtf"><a href="pages/w3c_dtf.html">w3c_dtf</a></h3>
+<p>Return a string of the date with the "W3C-DTF" format.</p>
+<h3 id="rfc822"><a href="pages/rfc822.html">rfc822</a></h3>
+<p>Return a string of the date with the "RFC822" format.</p>
+<h2 id="Obtain_parts_of_date_and_customize_details.">Obtain parts of date and customize details.</h2>
+<h3 id="set_year_format"><a href="pages/set_year_format.html">set_year_format</a></h3>
+<p>set format of output of the year text returned with <a href="pages/y.html">y</a></p>
+<h3 id="y"><a href="pages/y.html">y</a></h3>
+<p>Return year as a text.</p>
+<h3 id="set_month_format"><a href="pages/set_month_format.html">set_month_format</a></h3>
+<p>set format of output of the month text returned with <a href="pages/mo.html">mo</a>.</p>
+<h3 id="mo"><a href="pages/mo.html">mo</a></h3>
+<p>Return month as text.</p>
+<h3 id="set_leading_zero"><a href="pages/set_leading_zero.html">set_leading_zero</a></h3>
+<p>set whether month, day, hour, minute and second have a leading zero or not.</p>
+<h3 id="d"><a href="pages/d.html">d</a></h3>
+<p>Return day as text.</p>
+<h3 id="set_weekday_format"><a href="pages/set_weekday_format.html">set_weekday_format</a></h3>
+<p>set the format of weekday returned by <a href="pages/w.html">w</a>.</p>
+<h3 id="w"><a href="pages/w.html">w</a></h3>
+<p>Return weekday name in English.</p>
+<h3 id="h"><a href="pages/h.html">h</a></h3>
+<p>Return hour as text.</p>
+<h3 id="min"><a href="pages/min.html">min</a></h3>
+<p>Return minute as text.</p>
+<h3 id="sec"><a href="pages/sec.html">sec</a></h3>
+<p>Return second as text.</p>
+<h3 id="time_to_GMT"><a href="pages/time_to_GMT.html">time_to_GMT</a></h3>
+<p>Return time to GMT as text.</p>
+		</div>
+		<!-- InstanceBeginEditable name="prev-next-item" --><!-- InstanceEndEditable -->
+	</body>
+
+</html>

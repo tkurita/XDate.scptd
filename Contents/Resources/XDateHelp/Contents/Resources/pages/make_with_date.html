@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>make_with_date</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="../assets/default.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/handler_page.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
+		<meta name="keywords" content="make_with_date, XDate" />
+		<script type="text/javascript" src="../assets-helpbook/run_helpscript.js"></script>
+        <link id="helpviewer-handler-helper" href="../assets-helpbook/helpviewer-handler-helper.scpt" />
+        <script type="text/javascript" src="../assets-helpbook/helpviewer-handler-enable.js"></script>
+		<link href="../" id="HelpBookRoot" />
+	</head>
+
+	<body>
+		<div id="navi-bar">
+			<div class="edit-script-link">
+			<a onclick="return runHelpScriptWithBundleRoot(this)" href="../assets-helpbook/editScript.scpt">Edit Script</a>
+			</div>
+			<div class="left-contents">
+			<div class="to-root">
+			<a href="../index.html">XDate Reference</a>
+			</div>
+			</div>
+		</div>
+		<div id="contents">
+		<div class="elementTitle">
+<a id="make_with_date" name="make_with_date">make_with_date</a>
+</div>
+<p class="sourceCode">
+<span class="userDefine">make_with_date</span><span class="normal">(</span><span class="userDefine">a_date</span><span class="normal">)</span>
+<a href="../assets-helpbook/setClipboard.scpt" onclick="return runHelpScriptWithInnerText(this)">
+<img src="../assets-helpbook/Clipboard24.png" alt="copy to clipboard" align="right" />
+</a></p>
+<p>Make a XDate instance from a date object.</p>
+<div class="subHeading">
+Parameters
+</div>
+<ul>
+<li>a_date (date) :  a date object</li>
+</ul>
+<div class="subHeading">
+Result
+</div>
+<p>XDate instance</p>
+<div class="subHeading">
+Example
+</div>
+<div class="sourceCode">
+<div class="scriptButton">
+    <input type="button" value="Open this script" onclick="document.location = this.src" src="applescript://com.apple.scripteditor?action=new&amp;script=tell%20script%20%22XDate%22%0D%09make_with(current%20date)%0D%09make_with(date%20%222018/1/5%207:08%22)%0Dend%20tell" />
+</div><div>
+<span class="langKeyword">tell</span> <span class="className">script</span><span class="normal"> &quot;XDate&quot;</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="userDefine">make_with</span><span class="normal">(</span><span class="additionCommandName">current date</span><span class="normal">)</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="userDefine">make_with</span><span class="normal">(</span><span class="className">date</span><span class="normal"> &quot;2018年1月5日金曜日 7:08:00&quot;)</span>
+</div>
+<div>
+<span class="langKeyword">end</span> <span class="langKeyword">tell</span>
+</div>
+</div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>set_leading_zero</title>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<link href="../assets/default.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/handler_page.css" type="text/css" rel="stylesheet" media="all" />
+		<link href="../assets/applescript.css" type="text/css" rel="stylesheet" media="all" />
+		<meta name="keywords" content="set_leading_zero, XDate" />
+		<script type="text/javascript" src="../assets-helpbook/run_helpscript.js"></script>
+        <link id="helpviewer-handler-helper" href="../assets-helpbook/helpviewer-handler-helper.scpt" />
+        <script type="text/javascript" src="../assets-helpbook/helpviewer-handler-enable.js"></script>
+		<link href="../" id="HelpBookRoot" />
+	</head>
+
+	<body>
+		<div id="navi-bar">
+			<div class="edit-script-link">
+			<a onclick="return runHelpScriptWithBundleRoot(this)" href="../assets-helpbook/editScript.scpt">Edit Script</a>
+			</div>
+			<div class="left-contents">
+			<div class="to-root">
+			<a href="../index.html">XDate Reference</a>
+			</div>
+			</div>
+		</div>
+		<div id="contents">
+		<div class="elementTitle">
+<a id="set_leading_zero" name="set_leading_zero">set_leading_zero</a>
+</div>
+<p class="sourceCode">
+<span class="userDefine">set_leading_zero</span><span class="normal">(</span><span class="userDefine">a_flag</span><span class="normal">)</span>
+<a href="../assets-helpbook/setClipboard.scpt" onclick="return runHelpScriptWithInnerText(this)">
+<img src="../assets-helpbook/Clipboard24.png" alt="copy to clipboard" align="right" />
+</a></p>
+<p>set whether month, day, hour, minute and second have a leading zero or not.</p>
+
+
+<p>The default value is false.</p>
+<div class="subHeading">
+Result
+</div>
+<p>XDate</p>
+<div class="subHeading">
+Example
+</div>
+<div class="sourceCode">
+<div class="scriptButton">
+    <input type="button" value="Open this script" onclick="document.location = this.src" src="applescript://com.apple.scripteditor?action=new&amp;script=tell%20script%20%22XDate%22%27s%20make_with(%222018/1/1%22)%0D%09log%20mo()%20--%20%221%22%0D%09set_leading_zero(true)%0D%09log%20mo()%20--%20%2201%22%0Dend%20tell" />
+</div><div>
+<span class="langKeyword">tell</span> <span class="className">script</span><span class="normal"> &quot;XDate&quot;'s </span><span class="userDefine">make_with</span><span class="normal">(&quot;2018/1/1&quot;)</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">mo</span><span class="normal">() </span><span class="comment">-- &quot;1&quot;</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="userDefine">set_leading_zero</span><span class="normal">(</span><span class="enumeratedValues">true</span><span class="normal">)</span>
+</div>
+<div style="text-indent:4ex;">
+<span class="commandName">log</span> <span class="userDefine">mo</span><span class="normal">() </span><span class="comment">-- &quot;01&quot;</span>
+</div>
+<div>
+<span class="langKeyword">end</span> <span class="langKeyword">tell</span>
+</div>
+</div>
+		</div>
+	</body>
+
+</html>
